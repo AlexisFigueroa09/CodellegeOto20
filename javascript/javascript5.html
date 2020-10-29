@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Valores de un array5</title>
+	</head>
+	<body style="background-color, white;">
+	</body>
+		<script>
+			const ds = ['a', 'b', 'a', 'b', 'c', 'e', 'e', 'c', 'd', 'd', 'd', 'd']
+
+			console.log('Usando Set ' + JSON.stringify(
+			  [ ...new Set(ds) ]
+			))
+
+			console.log('Usando Filter ' + JSON.stringify(
+			  ds.filter((item, idx) => ds.indexOf(item) === idx)
+			))
+
+			console.log('Usando Reduce ' + JSON.stringify(
+			  ds.reduce((result, current) => {
+				return result.includes(current) ? result : [ ...result, current ]
+			  }, [])
+			))
+		</script>
+
+</html> 
